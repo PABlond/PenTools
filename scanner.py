@@ -1,8 +1,25 @@
 import argparse
 import nmap
 import threading
-from threading import Thread
 
+
+"""
+This script allows you to perform scan on a target using nmap. 
+
+usage: scanner.py [-h] [--range RANGE] [--specific SPECIFIC] [--version]
+                  [--ip IP]
+
+optional arguments:
+  -h, --help           show this help message and exit
+  --range RANGE        Indicates port to scan
+  --specific SPECIFIC  Scan specific ports. Eg: 22,80,443
+  --version            Activate version scan
+  --ip IP              Indicates ip to scan
+
+Eg:
+python scanner.py --version --ip 192.168.1.1 --specific 22,80,90 
+python scanner.py --ip 192.168.1.1 --range 10000-35000
+"""
 
 def nmapScan(ip, port, arguments, lock):
     with lock:
@@ -45,7 +62,7 @@ def main():
 
     lock = threading.Lock()
     for port in ports_range:
-        t = Thread(target=nmapScan, args=(ip, port, arguments, lock))
+        t = threading.Thread(target=nmapScan, args=(ip, port, arguments, lock))
         t.start()
 
 
