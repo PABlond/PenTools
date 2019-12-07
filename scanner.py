@@ -21,6 +21,7 @@ python scanner.py --version --ip 192.168.1.1 --specific 22,80,90
 python scanner.py --ip 192.168.1.1 --range 10000-35000
 """
 
+
 def nmapScan(ip, port, arguments, lock):
     with lock:
         nm = nmap.PortScanner()
