@@ -3,7 +3,7 @@ import multiprocessing
 import argparse
 
 """
-usage: login.py [-h] --file FILE --url URL [--avoid AVOID]
+usage: [-h] --file FILE --url URL [--avoid AVOID]
                 [--check_username CHECK_USERNAME]
                 [--login_username LOGIN_USERNAME] [--password PASSWORD]
 
