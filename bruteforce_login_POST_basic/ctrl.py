@@ -1,6 +1,6 @@
 import requests
 import multiprocessing
-
+import time
 
 class BF:
     def __init__(self, file: str, url: str, avoid_text: str,
@@ -42,12 +42,13 @@ class BF:
             if not self.avoid_text in r.text:
                 print(word)
                 self.results.append(word)
+            time.sleep(0.1)
         except ValueError as error:
             print('Error while processing word {}'.format(word))
             print(error)
 
     def print_results(self):
-        print('Valid usernames :')
+        print('Valid results :')
         for result in self.results:
             print("\t- {}".format(result))
 

@@ -9,12 +9,12 @@ def parse():
                         default='Invalid username')
     parser.add_argument('--check_username', '-cu',
                         help='Check username - [!] True if specified', default=False)
-    parser.add_argument('--login_username', '-l',
-                        help='Default username to use', default="admin")
     parser.add_argument('--username_param', '-uu',
                         help='Parameter to use for username', default="username")
     parser.add_argument('--password_param', '-up',
                         help='Parameter to use for username', default="password")
+    parser.add_argument('--username', '-u', help='Default username to use',
+                        required=False, default="admin")
     parser.add_argument('--password', '-p', help='Default password to use',
                         required=False, default="123456789")
     return parser.parse_args()

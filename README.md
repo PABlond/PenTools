@@ -8,6 +8,6 @@ Given the following form:
         <button type="submit">LOGIN</button>
     </form>
 
-You can use the script in "bruteforce_login_POST_basic" folder as follows:
+Then, the script in "bruteforce_login_POST_basic" folder can be used as follows:
 
     python run.py  -f /path/to/wordlist.txt -U http://localhost/login -p R4nd0m? -uu user -up pass 
