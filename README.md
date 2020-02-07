@@ -4,7 +4,7 @@ Given the following form:
 
     <form action="http://localhost/login" method="POST">
         <input type="text" name="user" />
-        <input type="pass" name="password" />
+        <input type="password" name="pass" />
         <button type="submit">LOGIN</button>
     </form>
 
