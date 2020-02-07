@@ -2,6 +2,25 @@ import requests
 import multiprocessing
 import argparse
 
+"""
+usage: login.py [-h] --file FILE --url URL [--avoid AVOID]
+                [--check_username CHECK_USERNAME]
+                [--login_username LOGIN_USERNAME] [--password PASSWORD]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --file FILE, -f FILE  List file to use
+  --url URL, -U URL     Url to bruteforce
+  --avoid AVOID, -a AVOID
+                        Text to avoid
+  --check_username CHECK_USERNAME, -cu CHECK_USERNAME
+                        Check username - [!] True if specified
+  --login_username LOGIN_USERNAME, -l LOGIN_USERNAME
+                        Default username to use
+  --password PASSWORD, -p PASSWORD
+                        Default password to use
+"""
+
 
 class BF:
     def __init__(self, file: str, url: str, avoid_text: str,
@@ -61,11 +80,11 @@ if __name__ == '__main__':
     parser.add_argument('--url', '-U', help='Url to bruteforce', required=True)
     parser.add_argument('--avoid', '-a', help='Text to avoid',
                         default='Invalid username')
-    parser.add_argument('--login_username', '-l',
-                        help='Url to bruteforce', default="admin")
-    parser.add_argument('--check_username', '-l',
+    parser.add_argument('--check_username', '-cu',
                         help='Check username - [!] True if specified', default=False)
-    parser.add_argument('--password', '-p', help='Url to bruteforce',
+    parser.add_argument('--login_username', '-l',
+                        help='Default username to use', default="admin")
+    parser.add_argument('--password', '-p', help='Default password to use',
                         required=False, default="123456789")
 
     args = parser.parse_args()
